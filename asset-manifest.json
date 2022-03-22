@@ -1,14 +1,16 @@
 {
-  "files": {
-    "main.css": "/React/static/css/main.fd824684.css",
-    "main.js": "/React/static/js/main.d094c4c1.js",
-    "static/media/SEGA.woff": "/React/static/media/SEGA.47b4bfa94ef243af4a5b.woff",
-    "index.html": "/React/index.html",
-    "main.fd824684.css.map": "/React/static/css/main.fd824684.css.map",
-    "main.d094c4c1.js.map": "/React/static/js/main.d094c4c1.js.map"
-  },
-  "entrypoints": [
-    "static/css/main.fd824684.css",
-    "static/js/main.d094c4c1.js"
-  ]
+  "main.css": "/React/static/css/main.f1a5bd8a.chunk.css",
+  "main.js": "/React/static/js/main.21615b3b.chunk.js",
+  "main.js.map": "/React/static/js/main.21615b3b.chunk.js.map",
+  "runtime~main.js": "/React/static/js/runtime~main.d53f88d2.js",
+  "runtime~main.js.map": "/React/static/js/runtime~main.d53f88d2.js.map",
+  "static/css/2.e739598e.chunk.css": "/React/static/css/2.e739598e.chunk.css",
+  "static/js/2.9e12874e.chunk.js": "/React/static/js/2.9e12874e.chunk.js",
+  "static/js/2.9e12874e.chunk.js.map": "/React/static/js/2.9e12874e.chunk.js.map",
+  "index.html": "/React/index.html",
+  "precache-manifest.dd8501cd37d806367712e69ed9f8870f.js": "/React/precache-manifest.dd8501cd37d806367712e69ed9f8870f.js",
+  "service-worker.js": "/React/service-worker.js",
+  "static/css/2.e739598e.chunk.css.map": "/React/static/css/2.e739598e.chunk.css.map",
+  "static/css/main.f1a5bd8a.chunk.css.map": "/React/static/css/main.f1a5bd8a.chunk.css.map",
+  "static/media/App.css": "/React/static/media/SEGA.12a3db8b.woff"
 }
