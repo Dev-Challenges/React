@@ -10,6 +10,14 @@ h1 {
 	color: rgba(236, 38, 37, 0.7);
 }
 
+h3 {
+	font-family: 'SEGA LOGO FONT';
+	color: rgba(143, 32, 191, 0.7);
+	letter-spacing: 1px;
+	word-spacing: 2px;
+	margin: 2rem;
+}
+
 .searchbox {
 	margin: 0 0 20px 0;
 	font-style: italic;
