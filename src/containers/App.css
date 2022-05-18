@@ -28,3 +28,8 @@ h3 {
 ::placeholder {
 	color: #7d37d2;
 }
+
+img {
+	width: 250px;
+	height: 250px;
+}
