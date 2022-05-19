@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
@@ -23,8 +23,6 @@ const mapDispatchToProps = dispatch => {
 };
 
 function App({ searchfield, onSearchChange, robots, onRequestRobots, isPending, error }) {
-	const [isLoading, setIsLoading] = useState(false);
-
 	useEffect(() => {
 		onRequestRobots();
 	}, [onRequestRobots]);
