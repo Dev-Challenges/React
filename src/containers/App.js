@@ -4,49 +4,50 @@ import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
 import '../containers/App.css';
-import { setSearchField } from '../actions';
+import { setSearchField, requestRobots } from '../actions';
 
 const mapStateToProps = state => {
 	return {
-		searchfield: state.searchfield,
+		searchfield: state.searchRobots.searchfield,
+		robots: state.requestRobots.robots,
+		isPending: state.requestRobots.isPending,
+		error: state.requestRobots.error,
 	};
 };
 
 const mapDispatchToProps = dispatch => {
 	return {
 		onSearchChange: event => dispatch(setSearchField(event.target.value)),
+		onRequestRobots: () => dispatch(requestRobots()),
 	};
 };
 
-function App(props) {
-	const [robots, setRobots] = useState([]);
+function App({ searchfield, onSearchChange, robots, onRequestRobots, isPending, error }) {
+	const [isLoading, setIsLoading] = useState(false);
 
 	useEffect(() => {
-		fetch('https://jsonplaceholder.typicode.com/users')
-			.then(response => response.json())
-			.then(users => {
-				setRobots(users);
-			});
-	}, []);
+		onRequestRobots();
+	}, [onRequestRobots]);
 
-	{
-		const filterRobots = robots.filter(robot => {
-			return robot.name.toLowerCase().includes(props.searchfield.toLowerCase());
-		});
+	const filteredRobots = robots.filter(robot => {
+		return robot.name.toLowerCase().includes(searchfield.toLowerCase());
+	});
 
-		return !robots.length ? (
-			<h1>Loading ...</h1>
-		) : (
-			<div className='tc'>
-				<h1 className='f2'>Robofriends</h1>
-				<SearchBox searchChange={props.onSearchChange} />
+	return (
+		<div className='tc'>
+			<h1 className='f1'>RoboFriends</h1>
+			<SearchBox searchChange={onSearchChange} />
+			{isPending ? (
+				<h1>Loading...</h1>
+			) : error ? (
+				<h1>{error}</h1>
+			) : (
 				<Scroll>
-					<CardList robots={filterRobots} />
+					<CardList robots={filteredRobots} />
 				</Scroll>
-				<h3 className='f4'>Scroll down for more robots</h3>
-			</div>
-		);
-	}
+			)}
+		</div>
+	);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
